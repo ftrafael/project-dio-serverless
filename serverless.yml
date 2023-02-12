@@ -1,0 +1,16 @@
+service: project-dio-serverless
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  lambdaHashingVersion: '20200924'
+  region: sa-east-1
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
